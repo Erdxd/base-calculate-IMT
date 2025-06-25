@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "base-calculate-IMT",
+			"path": "."
+		},
+		{
+			"name": "Project1",
+			"path": "../../../../../Go/go1.21.1/Project/Project1"
+		}
+	],
+	"settings": {}
+}

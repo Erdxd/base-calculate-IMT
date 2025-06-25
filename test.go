@@ -8,29 +8,71 @@ import (
 const imtpower = 2
 
 func main() {
-	fmt.Println("___КАЛЬКУЛЯТОР ИНДЕКСА МАССЫ ТЕЛА___")
-	var kg, height = getUserInput()
-	imt := calculateimt(kg, height)
-	fmt.Println("Ваш ИМТ:", imt)
+	for {
 
-	if imt < 18.5 && imt > 10 {
-		fmt.Println("Вам надо набрать массу")
-	} else if imt < 25 && imt > 18.5 {
-		fmt.Println("У вас нормальный вес")
-	} else if imt > 25 && imt < 100 {
-		fmt.Println("Вам надо сбросить вес")
-	} else if imt < 10 || imt > 100 {
-		fmt.Println("Вы ошиблись в записях")
+		fmt.Println("___КАЛЬКУЛЯТОР ИНДЕКСА МАССЫ ТЕЛА___")
+		var kg, height = getUserInput()
+		imt := calculateimt(kg, height)
 
+		if imt < 18.5 && imt > 10 {
+			for {
+
+				fmt.Println("Ваш IMT =", imt, "Вам надо набрать массу")
+				fmt.Println("Подсказать упражнения для набора массы? (yes or not)")
+				yesornot := ""
+				fmt.Scan(&yesornot)
+				if yesornot == "да" || yesornot == "if" || yesornot == "yes" || yesornot == "yeah" {
+					/////////////////////////////////////////////////////////////////////////
+
+				} else if yesornot == "not" || yesornot == "no" || yesornot == "нет" || yesornot == "не" {
+					break
+
+				} else {
+					fmt.Println("Вы ввели что-то не то ")
+
+				}
+			}
+		} else if imt < 25 && imt > 18.5 {
+			for {
+				fmt.Println("Ваш IMT =", imt, "У вас нормальный вес")
+				fmt.Println("Подсказать упражнения для сохранения вашей формы?")
+				yesornot := ""
+				fmt.Scan(&yesornot)
+				if yesornot == "да" || yesornot == "if" || yesornot == "yes" || yesornot == "yeah" {
+					/////////////////////////////////////////////////////////\
+
+				} else if yesornot == "not" || yesornot == "no" || yesornot == "нет" || yesornot == "не" {
+					break
+
+				} else {
+					fmt.Println("Вы ввели что-то не то ")
+
+				}
+			}
+		} else if imt > 25 && imt < 100 {
+			for {
+				fmt.Println("Ваш IMT =", imt, "Вам надо сбросить вес")
+				fmt.Println("Подсказать упражнения для сброса лишнего веса?")
+				yesornot := ""
+				fmt.Scan(&yesornot)
+				if yesornot == "да" || yesornot == "if" || yesornot == "yes" || yesornot == "yeah" {
+
+				} else if yesornot == "not" || yesornot == "no" || yesornot == "нет" || yesornot == "не" {
+					break
+
+				} else {
+					fmt.Println("Вы ввели что-то не то ")
+
+				}
+			}
+		} else if imt < 10 || imt > 100 {
+			fmt.Println("Ваш IMT =", imt, "Вы ошиблись в записях")
+
+		}
 	}
+}
 
-	outputResult(imt)
-
-} //Вызываем функцию, возвращаем ее результат
-func outputResult(imt float64) {
-	fmt.Println("ваш имт:", imt)
-
-} // делаем функцию для помещения в нее переменной отвечающей за расчет имт
+// делаем функцию для помещения в нее переменной отвечающей за расчет имт
 func calculateimt(kg float64, height float64) float64 {
 	var imt = float64(kg) / math.Pow(height/100, imtpower)
 	return imt
@@ -38,9 +80,9 @@ func calculateimt(kg float64, height float64) float64 {
 func getUserInput() (float64, float64) {
 	height := 1.8 // рост
 	kg := 63.0    // вес
-	fmt.Printf("Введите свой рост (в сантиметрах)")
+	fmt.Printf("Введите свой рост (в метрах)")
 	fmt.Scan(&height) // записывает в перемнную данные которые он введет в этот блоке
-	fmt.Printf("Введите свой вес (в киллограмах)")
+	fmt.Printf("Введите свой вес (в сантиметрах)")
 	fmt.Scan(&kg) //записывает в перемнную данные которые он введет в этот блоке
 	return kg, height
 
